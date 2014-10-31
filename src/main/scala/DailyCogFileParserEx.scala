@@ -165,12 +165,11 @@ object DailyCOGMain extends Serializable{
 	
 	def main(args:Array[String]){
 
-		val inputPath="hdfs:///user/mraza/Rwanda_In/"
-		val outputPath = "hdfs:///user/mraza/Rwanda_Out/"
+		val inputPath=args(1)
+		val outputPath = args(2)
 		
-		val inputFileName="RawMobilityFiles/"+args(0)
-		//val inputFileName="0501-decrypted.txt"
-		val outputFileName=outputPath+inputFileName
+		val inputFileName=inputPath+args(0)
+		val outputFileName=outputPath+args(0)
 
 	var dc=new DailyCOG()
 
