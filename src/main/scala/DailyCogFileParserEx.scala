@@ -38,8 +38,6 @@ class MyRegistrator extends KryoRegistrator {
 
 class DailyCOG extends Serializable{
 
-
-	
 def initDistrictsProvinceMap(sc:SparkContext,fileName:String,districtIndex:Int,provinceIndex:Int, delimiter:String=",")={
 
         var dpFile=sc.textFile(fileName).map(line=>(new DSV(line,",")))
@@ -185,7 +183,7 @@ object DailyCOGMain extends Serializable{
 
 
 
-var dsvData = sc.textFile(inputPath+inputFileName,10).map(line=>(new DSV(line,"\\|")))
+var dsvData = sc.textFile(inputFileName,10).map(line=>(new DSV(line,"\\|")))
 	dsvData.persist(storage.StorageLevel.MEMORY_ONLY_SER)
 	//TODO Filter out the rows with invalid entries. Have to see how the invalid entries are specified
 	//.filter(d=>(d.parts(latIndex)!="NaN" 
