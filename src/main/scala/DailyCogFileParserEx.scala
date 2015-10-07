@@ -225,5 +225,9 @@ var dsvData = sc.textFile(inputFileName,10).map(line=>(new DSV(line,"\\|")))
 		labelledEveningEntries.saveAsTextFile(outputFileName+"-DailyEveningCOG")
 
 
+    /*
+      Output format is SubscriberId,(Date,Hour,TowerA,TowerB,TowerC,COG_Lat,COG_Lng,TotalRecords
+     */
+
 	} 
 }
